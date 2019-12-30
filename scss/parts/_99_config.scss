@@ -1,0 +1,20 @@
+.clrfix {
+    overflow: hidden;
+    &:after {
+        content: "";
+        clear: both;
+        display: block;
+    }
+}
+.pc {
+    display: none !important;
+    @include tab {
+        display: block !important;
+    }
+}
+.sp {
+    display: block !important;
+    @include tab {
+        display: none !important;
+    }
+}

@@ -1,0 +1,17 @@
+footer {
+    background-color: $bg-04;
+    padding: 4% 2%;
+    p {
+        color: $sub;
+        font-size: 71.42%;
+        b {
+            font-size: 120%;
+        }
+        small {
+            display: block;
+            text-align: center;
+            margin-top: 4%;
+            font-size: 71.42%;
+        }
+    }
+}

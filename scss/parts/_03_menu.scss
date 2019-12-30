@@ -1,0 +1,32 @@
+.menu {
+    overflow-x: scroll;
+    @include tab {
+        display: table;
+        table-layout: fixed;
+        width: 100%;
+    }
+    li {
+        display: table-cell;
+        font-weight: bold;
+        text-align: center;
+        &:not(:last-child) {
+            border-right: 1px solid #ccc;
+        }
+        a {
+            background-color: $sub;
+            text-decoration: none;
+            padding: .5em 1em;
+            display: block;
+            &:hover {
+                @include pc {
+                    background-color: $key;
+                    color: $sub;
+                }
+            }
+            &.active {
+                background-color: $key;
+                color: $sub;
+            }
+        }
+    }
+}

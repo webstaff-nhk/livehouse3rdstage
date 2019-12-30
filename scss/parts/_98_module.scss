@@ -1,0 +1,38 @@
+// ボタン
+.btn {
+    margin-top: 4%;
+    overflow: hidden;
+    .btn-inner {
+        background-color: $sub;
+        display: table;
+        height: 2.5em;
+        position: relative;
+        // 右寄せボタンクラス
+        &.right {
+            float: right;
+        }
+        // ワイドボタンクラス
+        &.max {
+            width: 100%;
+        }
+        &:after {
+            display: block;
+            content: "";
+            width: 8px;
+            height: 8px;
+            border-top: 2px solid #aaa;
+            border-right: 2px solid #aaa;
+            position: absolute;
+            right: 8px;
+            top: 50%;
+            transform: rotate(45deg);
+            margin-top: -5px;
+        }
+        a {
+            display: table-cell;
+            vertical-align: middle;
+            padding: 0 1.5em 0 1em;
+            text-decoration: none;
+        }
+    }    
+}

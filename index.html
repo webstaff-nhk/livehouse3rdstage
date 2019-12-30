@@ -2,6 +2,7 @@
 <html lang="ja" xmlns:og="http://ogp.me/ns#">
     <head>
         <meta charset="utf-8">
+        <meta name="robots" content="noindex">
         <title>サイトタイトル</title>
         <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
         <meta name="description" content="">
@@ -13,6 +14,8 @@
         <meta property="og:site_name" content="">
         <meta property="og:image" content="">
         <link href="css/style.css" rel="stylesheet" type="text/css">
+        <link href="css/slick.css" rel="stylesheet" type="text/css">
+        <!--<link href="css/slick-theme.css" rel="stylesheet" type="text/css">-->
         <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-112077772-1"></script>
         <script>
@@ -22,7 +25,33 @@
           gtag('config', 'UA-112077772-1');
         </script>
     </head>
-    <body>
-        <!--#include file="inc/header.html" -->
+    <body id="top">
+        <div class="wrapper">
+            <!--#include file="inc/header.html" -->
+            <!--#include file="inc/main-visual.html" -->
+            <!--#include file="inc/menu.html" -->            
+            <!--#include file="inc/cts-pickup.html" -->
+            <!--#include file="inc/cts-information.html" -->
+            <!--#include file="inc/cts-recommend.html" -->
+            <!--#include file="inc/footer.html" -->
+        </div>
+        <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+        <script type="text/javascript" src="js/slick.js"></script>
+        <script type="text/javascript">
+            $(function() {
+                $(document).ready(function(){
+                    $('.slide').slick({
+                        autoplay: true,
+                        autoplaySpeed: 5000,
+                        arrows: false,
+//                        dots: true,
+                        slidesToShow: 1,
+                        centerMode: true,
+                        centerPadding: '4%',
+                        focusOnSelect: true
+                    });
+                });
+            });
+        </script>
     </body>
 </html>

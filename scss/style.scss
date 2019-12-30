@@ -1,25 +1,33 @@
 @charset "UTF-8";
 
 $path: "../img/";
-$key: #434343;
-$sub_0: #ffffff;
-$sub_1: #f2f2f2;
-$sub_2: #dadada;
-$sub_3: #999999;
-$sub_4: #666666;
+$key: #333333;
+$sub: #ffffff;
+$bg-01: #666666;
+$bg-02: #888888;
+$bg-03: #aaaaaa;
+$bg-04: #333333;
 
+$pc: 768px; // PC
+$tab: 600px;  // TAB
 
-
-body {
-    font-size: 12px;
-    letter-spacing: 1.2px;
-    //position: relative;
-    color: $key;
-    background: $sub_0;
-    padding-bottom: 40px;
-    -webkit-text-size-adjust: 100%;
-    * {
-        box-sizing: border-box;
-    }
+@mixin pc {
+  @media (min-width: ($pc)) {
+    @content;
+  }
 }
-@import "parts/_00_reset.scss";
+@mixin tab {
+  @media (min-width: ($tab)) {
+    @content;
+  }
+}
+
+@import "parts/_reset.scss";
+@import "parts/_00_body.scss";
+@import "parts/_01_header.scss";
+@import "parts/_02_mainvisual.scss";
+@import "parts/_03_menu.scss";
+@import "parts/_04_contents.scss";
+@import "parts/_05_footer.scss";
+@import "parts/_98_module.scss";
+@import "parts/_99_config.scss";
