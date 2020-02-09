@@ -30,9 +30,7 @@
         <div class="wrapper">
             <!--#include virtual="/livehouse3rdstage/inc/main-visual.html" -->
             <!--#include virtual="/livehouse3rdstage/inc/menu.html" -->            
-            <!--#include virtual="/livehouse3rdstage/inc/cts-pickup.html" -->
-            <!--#include virtual="/livehouse3rdstage/inc/cts-information.html" -->
-            <!--#include virtual="/livehouse3rdstage/inc/cts-recommend.html" -->
+            <!--#include virtual="/livehouse3rdstage/inc/cts-about.html" -->
         </div>
         <!--#include virtual="/livehouse3rdstage/inc/footer.html" -->                
         <script type="text/javascript" src="/livehouse3rdstage/js/jquery-1.11.2.min.js"></script>
@@ -53,45 +51,9 @@
                 });
                 
                 //選択タグ
-                var tgtTab = $(".tabIndex");
+                var tgtTab = $(".tabAbout");
                 tgtTab.addClass("active");
 
-                // スケジュール生成
-                $.ajax({
-                    type: 'GET',
-                    url: '/livehouse3rdstage/data/schedule.json',
-                    dataType: 'json',
-                    success: function(json){
-                        var item = json.pickup.item;
-                        var len = item.length;
-                        var dateOpen = "<li class='cts-inner'><time>";
-                        var dateClose = "</time>";
-                        var iventOpen = "<dl><dt>";
-                        var iventTitleClose = "</dt><dd>";
-                        var iventClose = "</dd></dl>";
-                        var listOpen = "<li>";
-                        var listClose = "</li>";
-                        var bandPhotoOpen = "<ul class='band-photo'>";
-                        var bandListOpen = "<ul class='band-list'>";
-                        var ulClose = "</ul>";
-                        var timeOpen = "<p>OPEN&nbsp;<time>";
-                        var timeStart = "</time>&nbsp;START&nbsp;<time>";
-                        var ticketAdvance = "</time>&nbsp;前売&nbsp;&yen;";
-                        var ticketDoor = "-&nbsp;当日&nbsp;&yen;";
-                        var ticketClose = "-</p>";
-                        for(var i=0; i < len; i++){
-                            $("#ctsSchedule").append(
-                                    dateOpen + item[i].date + dateClose
-                                    + iventOpen + item[i].iventTitle+ iventTitleClose +item[i].iventDetail + iventClose
-                                    + bandPhotoOpen + item[i].bandPhoto + ulClose
-                                    + bandListOpen + item[i].bandList + ulClose
-                                    + timeOpen + item[i].timeOpen + timeStart + item[i].timeStart
-                                    + ticketAdvance + item[i].ticketAdvance + ticketDoor + item[i].ticketDoor + ticketClose
-                                    + listClose
-                                    );
-                        }
-                    }
-                });
             });
         </script>
     </body>

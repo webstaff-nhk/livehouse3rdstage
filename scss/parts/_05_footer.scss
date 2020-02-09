@@ -1,6 +1,7 @@
 footer {
     background-color: $bg-04;
     padding: 4% 2%;
+    text-align: center;
     p {
         color: $sub;
         font-size: 71.42%;
@@ -9,7 +10,6 @@ footer {
         }
         small {
             display: block;
-            text-align: center;
             margin-top: 4%;
             font-size: 71.42%;
         }

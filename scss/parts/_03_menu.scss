@@ -1,5 +1,7 @@
 .menu {
     overflow-x: scroll;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
     @include tab {
         display: table;
         table-layout: fixed;

@@ -7,7 +7,7 @@
         <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
         <meta name="description" content="">
         <meta name="keywords" content="">
-        <meta property="og:url" content="https://livehouse3rdstage.com/">
+        <meta property="og:url" content="https://livehouse3rdstage.com/schedule.html">
         <meta property="og:type" content="website">
         <meta property="og:title" content="">
         <meta property="og:description" content="">
@@ -26,15 +26,13 @@
         </script>
     </head>
     <body id="top">
-        <!--#include virtual="/livehouse3rdstage/inc/header.html" -->
         <div class="wrapper">
+            <!--#include virtual="/livehouse3rdstage/inc/header.html" -->
             <!--#include virtual="/livehouse3rdstage/inc/main-visual.html" -->
             <!--#include virtual="/livehouse3rdstage/inc/menu.html" -->            
-            <!--#include virtual="/livehouse3rdstage/inc/cts-pickup.html" -->
-            <!--#include virtual="/livehouse3rdstage/inc/cts-information.html" -->
-            <!--#include virtual="/livehouse3rdstage/inc/cts-recommend.html" -->
+            <!--#include virtual="/livehouse3rdstage/inc/cts-schedule.html" -->
+            <!--#include virtual="/livehouse3rdstage/inc/footer.html" -->                
         </div>
-        <!--#include virtual="/livehouse3rdstage/inc/footer.html" -->                
         <script type="text/javascript" src="/livehouse3rdstage/js/jquery-1.11.2.min.js"></script>
         <script type="text/javascript" src="/livehouse3rdstage/js/slick.js"></script>
         <script type="text/javascript">
@@ -53,7 +51,7 @@
                 });
                 
                 //選択タグ
-                var tgtTab = $(".tabIndex");
+                var tgtTab = $(".tabSchedule");
                 tgtTab.addClass("active");
 
                 // スケジュール生成
@@ -62,7 +60,7 @@
                     url: '/livehouse3rdstage/data/schedule.json',
                     dataType: 'json',
                     success: function(json){
-                        var item = json.pickup.item;
+                        var item = json.this.item;
                         var len = item.length;
                         var dateOpen = "<li class='cts-inner'><time>";
                         var dateClose = "</time>";

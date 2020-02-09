@@ -9,6 +9,14 @@
         margin: 0 0 4%;
         text-align: center;
     }
+    h3 {
+        font-size: 20px;
+        @include tab {
+            font-size: 28px;
+        }
+        margin: 0 0 4%;
+        text-align: center;
+    }
     .cts-inner {
         margin: 0 auto;
         background-color: $sub;
@@ -17,8 +25,11 @@
             padding: 40px 20px;
         }
     }
-    // Top-PickUp
-    .pu-list {
+    img {
+        width: 100%;
+    }
+    // Top-PickUp Schedule
+    .pu-list,.schedule-list {
         & > li {
             &:not(:last-child) {
                 margin-bottom: 4%;
@@ -26,8 +37,8 @@
         }
         li {
             @include tab {
-                border-right: 10px solid $bg-01;
-                border-left: 10px solid $bg-01;
+                //border-right: 10px solid $bg-01;
+                //border-left: 10px solid $bg-01;
             }
             & > time {
                 font-weight: bold;
@@ -83,6 +94,13 @@
             }
         }
     }
+    .schedule-list {
+        li {
+            @include tab {
+                border: none;
+            }
+        }
+    }
     // Top-Information
     .info-list {
         height: 250px;
@@ -132,6 +150,23 @@
                 width: 100%;
                 height: auto;
                 vertical-align: bottom;
+            }
+        }
+    }
+    // About
+    .floormap {
+        text-align: center;
+        img {
+            max-width: 700px;
+        }
+    }
+    .about-list {
+        dt {
+            font-weight: bold;
+        }
+        dd {
+            &:not(:last-child) {
+                margin-bottom: 1%;                
             }
         }
     }
